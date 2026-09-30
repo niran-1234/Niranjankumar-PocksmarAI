@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-card">
+  <h1>Welcome back</h1>
+  <p>Log in to save and review your plans.</p>
+  <form id="login-form">
+    <label>Email<input type="email" name="email" required></label>
+    <label>Password<input type="password" name="password" required></label>
+    <button class="button" type="submit">Login</button>
+    <div id="form-message" class="message"></div>
+  </form>
+  <p>New here? <a href="/register">Create an account</a></p>
+</div>
+{% endblock %}
+{% block scripts %}<script>setupAuthForm("login-form","/api/login");</script>{% endblock %}

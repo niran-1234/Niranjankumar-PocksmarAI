@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">SMART BUDGET + GENERATIVE AI</p>
+    <h1>Plan smarter. Spend with a plan.</h1>
+    <p class="lead">PocketSmart AI turns a budget, preferences, and optional outfit image into structured planning recommendations.</p>
+    <div class="actions">
+      <a class="button" href="/planner/home">Start Home Planner</a>
+      <a class="button secondary" href="/register">Create Account</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div>🏠 Home</div><div>🎉 Party</div><div>💎 Jewelry</div>
+    <small>AI suggestions + budget breakdown + history</small>
+  </div>
+</section>
+<section class="grid three">
+  <article class="card"><h3>Home Interior</h3><p>Allocate your budget across lighting, furniture, decor and comfort.</p><a href="/planner/home">Open planner →</a></article>
+  <article class="card"><h3>Party Planning</h3><p>Plan food, venue, decoration and entertainment around your guest count.</p><a href="/planner/party">Open planner →</a></article>
+  <article class="card"><h3>Jewelry</h3><p>Match occasion and style, with optional outfit-image analysis.</p><a href="/planner/jewelry">Open planner →</a></article>
+</section>
+{% endblock %}

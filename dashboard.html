@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">DASHBOARD</p><h1 id="welcome">Your PocketSmart dashboard</h1><p>Review your saved plans or start a new planner.</p></section>
+<div class="grid three">
+  <a class="card link-card" href="/planner/home"><h3>🏠 Home</h3><p>Interior budget planner</p></a>
+  <a class="card link-card" href="/planner/party"><h3>🎉 Party</h3><p>Event budget planner</p></a>
+  <a class="card link-card" href="/planner/jewelry"><h3>💎 Jewelry</h3><p>Occasion + outfit planner</p></a>
+</div>
+<section class="card">
+  <h2>Recent plans</h2>
+  <div id="recent-history">Loading...</div>
+</section>
+{% endblock %}
+{% block scripts %}<script>loadDashboard();</script>{% endblock %}

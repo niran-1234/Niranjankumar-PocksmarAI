@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head">
+  <p class="eyebrow">BUDGET PLANNER</p>
+  <h1>{{ planner.title() }} Planner</h1>
+  <p>Enter your details and PocketSmart AI will build a budget-aware plan.</p>
+</section>
+
+{% if planner == "home" %}
+<form class="planner-form card" data-planner="home">
+  <label>Budget (₹)<input name="budget" type="number" min="1" required></label>
+  <label>Rooms<select name="rooms" multiple required><option>Living Room</option><option>Bedroom</option><option>Kitchen</option><option>Dining Room</option><option>Study Room</option></select></label>
+  <label>Style<select name="style"><option>Modern</option><option>Minimal</option><option>Traditional</option><option>Contemporary</option></select></label>
+  <label>Notes<textarea name="notes" placeholder="Example: need warm lighting and compact furniture"></textarea></label>
+  <button class="button" type="submit">Generate Home Plan</button>
+</form>
+{% elif planner == "party" %}
+<form class="planner-form card" data-planner="party">
+  <label>Budget (₹)<input name="budget" type="number" min="1" required></label>
+  <label>Event type<input name="event_type" placeholder="Birthday, wedding, corporate..." required></label>
+  <label>Guests<input name="guests" type="number" min="1" required></label>
+  <label>Venue details<input name="venue" placeholder="Home, hall, outdoor, undecided"></label>
+  <label>City<input name="city" placeholder="Chennai"></label>
+  <label>Notes<textarea name="notes"></textarea></label>
+  <button class="button" type="submit">Generate Party Plan</button>
+</form>
+{% else %}
+<form class="planner-form card" data-planner="jewelry" enctype="multipart/form-data">
+  <label>Budget (₹)<input name="budget" type="number" min="1" required></label>
+  <label>Occasion<input name="occasion" placeholder="Wedding, birthday, festival..." required></label>
+  <label>Style<select name="style"><option>Elegant</option><option>Minimal</option><option>Traditional</option><option>Statement</option><option>Contemporary</option></select></label>
+  <label>Outfit description<textarea name="outfit_description" placeholder="Optional: navy blue saree with silver details"></textarea></label>
+  <label>Outfit image (optional)<input name="outfit_image" type="file" accept="image/png,image/jpeg,image/webp"></label>
+  <button class="button" type="submit">Generate Jewelry Plan</button>
+</form>
+{% endif %}
+
+<section id="result" class="result-area"></section>
+{% endblock %}
+{% block scripts %}<script>setupPlanner("{{ planner }}");</script>{% endblock %}

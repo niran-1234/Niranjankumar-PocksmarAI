@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-card">
+  <h1>Create your account</h1>
+  <p>Your saved recommendation history stays associated with your account.</p>
+  <form id="register-form">
+    <label>Name<input name="name" required minlength="2"></label>
+    <label>Email<input type="email" name="email" required></label>
+    <label>Password<input type="password" name="password" required minlength="6"></label>
+    <button class="button" type="submit">Register</button>
+    <div id="form-message" class="message"></div>
+  </form>
+  <p>Already registered? <a href="/login">Login</a></p>
+</div>
+{% endblock %}
+{% block scripts %}<script>setupAuthForm("register-form","/api/register");</script>{% endblock %}

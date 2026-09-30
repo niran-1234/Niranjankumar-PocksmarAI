@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head"><p class="eyebrow">HISTORY</p><h1>Your recommendation history</h1></section>
+<section class="card"><div id="history-list">Loading...</div></section>
+<div id="history-detail" class="card hidden"></div>
+{% endblock %}
+{% block scripts %}<script>loadHistory();</script>{% endblock %}
